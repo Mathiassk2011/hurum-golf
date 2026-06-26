@@ -99,7 +99,8 @@
             /* Full-bredde knapper så de aldri kuttes på smale skjermer */
             .ig-cta { flex-direction: column; align-items: stretch; }
             .ig-cta .btn-gold, .ig-cta .btn-fb,
-            .shop-cta .btn-gold { display: block; width: 100%; text-align: center; }
+            .shop-cta .btn-gold, .shop-cta .btn-outline { display: block; width: 100%; text-align: center; }
+            .shop-cta { flex-direction: column; align-items: stretch; }
             .shop-chip { padding: 0.5rem 1.05rem; font-size: 0.8rem; }
             .menu-toggle { display: flex; }
             .nav-links {
@@ -495,7 +496,24 @@
             font-size: 0.85rem; color: var(--green-mid);
             font-weight: 500; letter-spacing: 0.03em;
         }
-        .shop-cta { text-align: center; }
+        .shop-cta {
+            display: flex; gap: 1rem;
+            justify-content: center; flex-wrap: wrap;
+        }
+        .btn-outline {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.82rem; font-weight: 500; letter-spacing: 0.14em;
+            text-transform: uppercase;
+            background: transparent; color: var(--green-deep);
+            border: 1px solid var(--green-mid);
+            padding: 1rem 2.5rem; border-radius: 100px;
+            cursor: pointer; text-decoration: none; display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background: var(--green-deep); color: var(--white);
+            border-color: var(--green-deep); transform: translateY(-2px);
+        }
 
         /* ── REGLER ──────────────────────────────────────── */
         #regler { background: var(--green-deep); }
@@ -857,6 +875,7 @@
 
         <div class="shop-cta">
             <a href="#kontakt" class="btn-gold">Kontakt oss for bestilling →</a>
+            <a href="https://eu.callawaygolf.com" target="_blank" rel="noopener" class="btn-outline">Se Callaway-butikken →</a>
         </div>
     </div>
 </section>
