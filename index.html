@@ -468,6 +468,28 @@
         .tm-feat-text { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
         .tm-feat-text strong { color: var(--green-deep); font-weight: 500; display: block; font-size: 0.85rem; }
 
+        /* ── PRO SHOP / UTSTYR ───────────────────────────── */
+        #utstyr { background: var(--cream); }
+        .shop-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 6vw, 3.4rem);
+            font-weight: 600; letter-spacing: 0.06em;
+            color: var(--green-deep); text-align: center;
+            margin: 0.5rem 0 0.3rem;
+        }
+        .shop-grid {
+            display: flex; flex-wrap: wrap; gap: 0.7rem;
+            justify-content: center; margin: 2.2rem auto 2.6rem;
+            max-width: 720px;
+        }
+        .shop-chip {
+            background: var(--white); border: 1px solid var(--cream-dark);
+            border-radius: 100px; padding: 0.6rem 1.4rem;
+            font-size: 0.85rem; color: var(--green-mid);
+            font-weight: 500; letter-spacing: 0.03em;
+        }
+        .shop-cta { text-align: center; }
+
         /* ── REGLER ──────────────────────────────────────── */
         #regler { background: var(--green-deep); }
         #regler .sec-tag { color: var(--gold); }
@@ -638,6 +660,7 @@
             <li><a href="#"            onclick="closeMenu()">Hjem</a></li>
             <li><a href="#simulatorer" onclick="closeMenu()">Simulatorer</a></li>
             <li><a href="#tjenester"   onclick="closeMenu()">Pro Timer</a></li>
+            <li><a href="#utstyr"      onclick="closeMenu()">Pro Shop</a></li>
             <li><a href="#regler"      onclick="closeMenu()">Regler</a></li>
             <li><a href="#instagram"   onclick="closeMenu()">Instagram</a></li>
             <li><a href="#kontakt"     onclick="closeMenu()">Kontakt</a></li>
@@ -801,6 +824,32 @@
                     <p>Utdannet PGA Pro med lang erfaring. Timene passer for alle nivåer — fra nybegynner til viderekommet spiller.</p>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- UTSTYR / PRO SHOP -->
+<section id="utstyr">
+    <div class="container">
+        <div class="sec-tag">Pro Shop</div>
+        <h2 class="sec-title">Vi selger <em>Callaway-utstyr</em></h2>
+        <p class="sec-desc">Hos oss får du tak i alt av golfutstyr fra Callaway — kjøp nye køller, baller og tilbehør rett hos oss på senteret. Usikker på hva som passer deg? Mariell hjelper deg å finne riktig utstyr for ditt spill.</p>
+
+        <div class="shop-brand">Callaway</div>
+
+        <div class="shop-grid">
+            <span class="shop-chip">Drivere</span>
+            <span class="shop-chip">Jern</span>
+            <span class="shop-chip">Wedger</span>
+            <span class="shop-chip">Puttere</span>
+            <span class="shop-chip">Baller</span>
+            <span class="shop-chip">Hansker</span>
+            <span class="shop-chip">Bager</span>
+            <span class="shop-chip">Tilbehør</span>
+        </div>
+
+        <div class="shop-cta">
+            <a href="#kontakt" class="btn-gold">Ta kontakt for utstyr →</a>
         </div>
     </div>
 </section>
