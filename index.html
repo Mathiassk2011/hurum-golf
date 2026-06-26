@@ -62,7 +62,7 @@
             display: flex; align-items: center;
         }
         nav.scrolled .nav-logo { color: var(--green-deep); }
-        .nav-logo img { height: 46px; width: auto; display: none; object-fit: contain; }
+        .nav-logo img { height: 50px; width: auto; display: none; object-fit: contain; border-radius: 9px; }
         .nav-logo.has-logo img { display: block; }
         .nav-logo.has-logo .logo-text { display: none; }
         .nav-links {
@@ -613,7 +613,7 @@
             display: flex; align-items: center;
         }
         .footer-logo span { color: var(--gold); }
-        .footer-logo img { height: 48px; width: auto; display: none; object-fit: contain; filter: brightness(0) invert(1); }
+        .footer-logo img { height: 64px; width: auto; display: none; object-fit: contain; border-radius: 10px; }
         .footer-logo.has-logo img { display: block; }
         .footer-logo.has-logo .logo-text { display: none; }
         .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
@@ -654,15 +654,15 @@
     <div class="hero-ring hero-ring-2"></div>
     <div class="hero-ring hero-ring-3"></div>
     <div class="hero-content">
-        <span class="hero-eyebrow">Hurum Golf</span>
-        <div id="heroLogoWrap" style="display:none;margin-bottom:1.5rem;">
-            <img id="heroLogo" src="logo.png" alt="Hurum Golf"
-                 style="height:90px;width:auto;object-fit:contain;filter:brightness(0) invert(1);"
-                 onload="document.getElementById('heroLogoWrap').style.display='block'"
+        <span class="hero-eyebrow" id="heroEyebrow">Hurum Golf</span>
+        <div id="heroLogoWrap" style="display:none;margin-bottom:1.8rem;">
+            <img id="heroLogo" src="logo.png" alt="Hurum Golf Simulatorsenter"
+                 style="height:200px;width:auto;object-fit:contain;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,0.3);"
+                 onload="document.getElementById('heroLogoWrap').style.display='block';['heroTitle','heroRule','heroEyebrow'].forEach(function(id){var e=document.getElementById(id);if(e)e.style.display='none';});"
                  onerror="this.closest('div').remove()">
         </div>
-        <h1>Hurum<br><em>Golf</em></h1>
-        <div class="hero-rule"></div>
+        <h1 id="heroTitle">Hurum<br><em>Golf</em></h1>
+        <div class="hero-rule" id="heroRule"></div>
         <p class="hero-sub">Golf · Simulatorer · Pro&nbsp;Timer · Range · Putting&nbsp;Green</p>
         <div class="hero-cta">
             <a href="#simulatorer" class="btn-gold">Book Simulator</a>
