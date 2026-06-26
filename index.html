@@ -575,7 +575,25 @@
             color: var(--gold-light); opacity: 0.85;
         }
         .ig-fallback .ig-ph svg { width: 34px; height: 34px; opacity: 0.6; }
-        .ig-cta { text-align: center; margin-top: 2.5rem; }
+        .ig-cta {
+            text-align: center; margin-top: 2.5rem;
+            display: flex; gap: 1rem;
+            justify-content: center; flex-wrap: wrap;
+        }
+        .btn-fb {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.82rem; font-weight: 500; letter-spacing: 0.14em;
+            text-transform: uppercase;
+            background: #1877F2; color: #fff;
+            border: none; padding: 1rem 2.5rem; border-radius: 100px;
+            cursor: pointer; text-decoration: none; display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .btn-fb:hover {
+            background: #0F5FD6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(24,119,242,0.35);
+        }
 
         /* ── FOOTER ──────────────────────────────────────── */
         footer {
@@ -849,6 +867,7 @@
 
         <div class="ig-cta">
             <a href="https://instagram.com/hurumgolf" target="_blank" rel="noopener" class="btn-gold">Følg oss på Instagram →</a>
+            <a href="https://www.facebook.com/p/Hurum-Golf-61575118753263/" target="_blank" rel="noopener" class="btn-fb">Følg oss på Facebook →</a>
         </div>
     </div>
 </section>
