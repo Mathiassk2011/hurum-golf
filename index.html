@@ -270,7 +270,7 @@
         }
 
         /* ── TJENESTER ──────────────────────────────────── */
-        #tjenester { background: var(--white); }
+        #tab-tjenester { background: var(--white); }
 
         .services-grid {
             display: grid; grid-template-columns: 1fr 1fr;
@@ -388,7 +388,7 @@
         .pro-note p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
 
         /* ── SIMULATORER ─────────────────────────────────── */
-        #simulatorer { background: var(--cream); }
+        #tab-simulatorer, #booking { background: var(--cream); }
 
         .price-bar {
             display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 2rem; margin-bottom: 1.8rem;
@@ -496,7 +496,7 @@
         .tm-feat-text strong { color: var(--green-deep); font-weight: 500; display: block; font-size: 0.85rem; }
 
         /* ── PRO SHOP / UTSTYR ───────────────────────────── */
-        #utstyr { background: var(--cream); }
+        #tab-utstyr { background: var(--cream); }
         .shop-brand {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(2.2rem, 6vw, 3.4rem);
@@ -535,12 +535,12 @@
         }
 
         /* ── REGLER ──────────────────────────────────────── */
-        #regler { background: var(--green-deep); }
-        #regler .sec-tag { color: var(--gold); }
-        #regler .sec-tag::before { background: var(--gold); }
-        #regler .sec-title { color: var(--white); }
-        #regler .sec-title em { color: var(--gold-light); }
-        #regler .sec-desc { color: rgba(255,255,255,0.55); }
+        #tab-regler { background: var(--green-deep); }
+        #tab-regler .sec-tag { color: var(--gold); }
+        #tab-regler .sec-tag::before { background: var(--gold); }
+        #tab-regler .sec-title { color: var(--white); }
+        #tab-regler .sec-title em { color: var(--gold-light); }
+        #tab-regler .sec-desc { color: rgba(255,255,255,0.55); }
 
         .rules-grid {
             display: grid;
@@ -574,7 +574,7 @@
         }
 
         /* ── KONTAKT ─────────────────────────────────────── */
-        #kontakt { background: var(--white); }
+        #tab-kontakt { background: var(--white); }
 
         .contact-grid {
             display: grid;
@@ -619,8 +619,8 @@
         .contact-phone span { font-size: 1rem; }
 
         /* ── INSTAGRAM ───────────────────────────────────── */
-        #instagram { background: var(--cream); }
-        #instagram .sec-tag { color: var(--gold); }
+        #tab-instagram { background: var(--cream); }
+        #tab-instagram .sec-tag { color: var(--gold); }
         .ig-wrap { margin-top: 2.5rem; }
         /* Behold widget styling hooks */
         behold-widget {
@@ -684,6 +684,78 @@
         .footer-logo.has-logo .logo-text { display: none; }
         .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
 
+        .footer-nav {
+            display: flex; flex-wrap: wrap; gap: 1.2rem;
+            justify-content: center; list-style: none;
+        }
+        .footer-nav a {
+            font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+            color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.25s;
+        }
+        .footer-nav a:hover { color: var(--gold); }
+
+        /* ── FANER ───────────────────────────────────────── */
+        nav.solid {
+            background: rgba(245,242,234,0.96);
+            backdrop-filter: blur(14px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+            padding: 1rem 2rem;
+        }
+        nav.solid .nav-logo { color: var(--green-deep); }
+        nav.solid .menu-toggle span { background: var(--green-deep); }
+        nav.solid .nav-links a { color: var(--text-muted); }
+        nav.solid .nav-links a:hover { color: var(--gold); }
+
+        .nav-links a { position: relative; padding-bottom: 5px; }
+        .nav-links a.active,
+        nav.solid .nav-links a.active,
+        nav.scrolled .nav-links a.active { color: var(--gold); }
+        .nav-links a.active::after {
+            content: ''; position: absolute;
+            left: 0; right: 0; bottom: 0; height: 1px; background: var(--gold);
+        }
+
+        .tab-panel { display: none; }
+        .tab-panel.is-active { display: block; animation: tabIn 0.4s ease both; }
+        @keyframes tabIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+        /* Plass til den faste navbaren på undersider */
+        body.subpage .tab-panel.is-active > section:first-child { padding-top: 9.5rem; }
+
+        /* Snarveier på forsiden */
+        .shortcut-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem; margin-top: 3rem;
+        }
+        .shortcut-card {
+            background: var(--white); border: 1px solid var(--cream-dark);
+            border-radius: var(--r); padding: 1.5rem;
+            text-decoration: none; display: block;
+            transition: all 0.3s ease;
+        }
+        .shortcut-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 4px 20px rgba(201,168,76,0.15);
+            transform: translateY(-3px);
+        }
+        .shortcut-card .sc-icon { font-size: 1.5rem; display: block; margin-bottom: 0.7rem; }
+        .shortcut-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem; font-weight: 500;
+            color: var(--green-deep); margin-bottom: 0.25rem;
+        }
+        .shortcut-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            body.subpage .tab-panel.is-active > section:first-child { padding-top: 7.5rem; }
+            .nav-links a.active::after { display: none; }
+            .nav-links li a.active {
+                color: var(--gold);
+                border-left: 3px solid var(--gold);
+                background: rgba(201,168,76,0.06);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -701,19 +773,24 @@
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#"            onclick="closeMenu()">Hjem</a></li>
-            <li><a href="#simulatorer" onclick="closeMenu()">Simulatorer</a></li>
-            <li><a href="#tjenester"   onclick="closeMenu()">Pro Timer</a></li>
-            <li><a href="#utstyr"      onclick="closeMenu()">Pro Shop</a></li>
-            <li><a href="#regler"      onclick="closeMenu()">Regler</a></li>
-            <li><a href="#instagram"   onclick="closeMenu()">Instagram</a></li>
-            <li><a href="#kontakt"     onclick="closeMenu()">Kontakt</a></li>
+            <li><a href="#hjem"        data-tab="hjem">Hjem</a></li>
+            <li><a href="#simulatorer" data-tab="simulatorer">Simulatorer</a></li>
+            <li><a href="#tjenester"   data-tab="tjenester">Pro Timer</a></li>
+            <li><a href="#utstyr"      data-tab="utstyr">Pro Shop</a></li>
+            <li><a href="#regler"      data-tab="regler">Regler</a></li>
+            <li><a href="#instagram"   data-tab="instagram">Instagram</a></li>
+            <li><a href="#kontakt"     data-tab="kontakt">Kontakt</a></li>
         </ul>
     </div>
 </nav>
 
+<main id="tabs">
+
+<!-- ══════════ FANE: HJEM ══════════ -->
+<div class="tab-panel" id="tab-hjem">
+
 <!-- HERO -->
-<div class="hero" id="hjem">
+<div class="hero">
     <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="">
         <source src="https://videos.pexels.com/video-files/6573644/6573644-hd_1920_1080_30fps.mp4" type="video/mp4">
     </video>
@@ -726,7 +803,7 @@
         <div class="hero-rule"></div>
         <p class="hero-sub">Golf · Simulatorer · Pro&nbsp;Timer · Range · Putting&nbsp;Green</p>
         <div class="hero-cta">
-            <a href="#simulatorer" class="btn-gold">Book Simulator</a>
+            <a href="https://albaplay.com/en/venue/hurum-golfsenter" target="_blank" rel="noopener" class="btn-gold">Book Simulator</a>
             <a href="#tjenester"   class="btn-ghost">Pro Timer</a>
         </div>
     </div>
@@ -736,15 +813,74 @@
     </div>
 </div>
 
-<!-- SIMULATORER -->
-<section id="simulatorer">
+<!-- BOOKING (forsiden) -->
+<section id="booking">
     <div class="container">
-        <div class="sec-tag">Innendørs Golf</div>
+        <div class="sec-tag">Booking</div>
         <h2 class="sec-title">Book Din <em>Simulator Tid</em></h2>
         <p class="sec-desc">Spill golf inne hele året på våre fire TrackMan 4-simulatorer. Velg en ledig tid og book enkelt og raskt.</p>
-        <div style="text-align:center;margin:1.5rem 0 2rem;">
-            <a href="https://albaplay.com/en/venue/hurum-golfsenter" target="_blank" rel="noopener" class="btn-gold">Book på Alba Play →</a>
+
+        <div class="price-bar">
+            <div class="price-chip">
+                <span class="chip-icon">🕐</span>
+                <div>
+                    <div class="chip-val">299 kr</div>
+                    <div class="chip-lbl">per time</div>
+                </div>
+            </div>
+            <div class="price-chip">
+                <span class="chip-icon">🏌️</span>
+                <div>
+                    <div class="chip-val">4</div>
+                    <div class="chip-lbl">simulatorer tilgjengelig</div>
+                </div>
+            </div>
         </div>
+
+        <div class="book-cta-card">
+            <div class="book-cta-content">
+                <h3>Klar til å spille?</h3>
+                <p>Velg simulator, dato og tid på Alba Play — vårt offisielle bookingsystem. Du ser ekte tilgjengelighet og betaler direkte.</p>
+                <a href="https://albaplay.com/en/venue/hurum-golfsenter" target="_blank" rel="noopener" class="btn-gold">Gå til booking →</a>
+                <p class="book-cta-note">Åpent alle dager · 04:00–24:00 · Avbestilling inntil 12 timer før</p>
+            </div>
+        </div>
+
+        <div class="shortcut-grid">
+            <a href="#simulatorer" class="shortcut-card">
+                <span class="sc-icon">📡</span>
+                <h4>Simulatorer</h4>
+                <p>Fire TrackMan 4 med tour-nøyaktig data</p>
+            </a>
+            <a href="#tjenester" class="shortcut-card">
+                <span class="sc-icon">🏌️</span>
+                <h4>Pro Timer</h4>
+                <p>Trening med PGA-utdannet golf pro</p>
+            </a>
+            <a href="#utstyr" class="shortcut-card">
+                <span class="sc-icon">🛍️</span>
+                <h4>Pro Shop</h4>
+                <p>Callaway-utstyr bestilt inn til deg</p>
+            </a>
+            <a href="#regler" class="shortcut-card">
+                <span class="sc-icon">📋</span>
+                <h4>Regler</h4>
+                <p>Det du bør vite før du kommer</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+</div><!-- /tab-hjem -->
+
+
+<!-- ══════════ FANE: SIMULATORER ══════════ -->
+<div class="tab-panel" id="tab-simulatorer">
+<section>
+    <div class="container">
+        <div class="sec-tag">Innendørs Golf</div>
+        <h2 class="sec-title">Fire <em>TrackMan 4</em>-simulatorer</h2>
+        <p class="sec-desc">Bransjens mest presise simulatorteknologi — tilgjengelig for deg hele året, uansett vær.</p>
 
         <!-- TRACKMAN 4 INFO -->
         <div class="tm-section">
@@ -814,9 +950,12 @@
         </div>
     </div>
 </section>
+</div><!-- /tab-simulatorer -->
 
-<!-- TJENESTER -->
-<section id="tjenester">
+
+<!-- ══════════ FANE: PRO TIMER ══════════ -->
+<div class="tab-panel" id="tab-tjenester">
+<section>
     <div class="container">
         <div class="sec-tag">Hva vi tilbyr</div>
         <h2 class="sec-title">Golf <em>Pro Timer</em></h2>
@@ -871,9 +1010,12 @@
         </div>
     </div>
 </section>
+</div><!-- /tab-tjenester -->
 
-<!-- UTSTYR / PRO SHOP -->
-<section id="utstyr">
+
+<!-- ══════════ FANE: PRO SHOP ══════════ -->
+<div class="tab-panel" id="tab-utstyr">
+<section>
     <div class="container">
         <div class="sec-tag">Pro Shop</div>
         <h2 class="sec-title">Vi selger <em>Callaway-utstyr</em></h2>
@@ -898,9 +1040,12 @@
         </div>
     </div>
 </section>
+</div><!-- /tab-utstyr -->
 
-<!-- REGLER -->
-<section id="regler">
+
+<!-- ══════════ FANE: REGLER ══════════ -->
+<div class="tab-panel" id="tab-regler">
+<section>
     <div class="container">
         <div class="sec-tag">Husregler</div>
         <h2 class="sec-title">Viktige <em>Regler</em></h2>
@@ -940,9 +1085,12 @@
         </div>
     </div>
 </section>
+</div><!-- /tab-regler -->
 
-<!-- INSTAGRAM -->
-<section id="instagram">
+
+<!-- ══════════ FANE: INSTAGRAM ══════════ -->
+<div class="tab-panel" id="tab-instagram">
+<section>
     <div class="container">
         <div class="sec-tag">Følg oss</div>
         <h2 class="sec-title">Siste fra <em>Instagram</em></h2>
@@ -959,9 +1107,12 @@
         </div>
     </div>
 </section>
+</div><!-- /tab-instagram -->
 
-<!-- KONTAKT -->
-<section id="kontakt">
+
+<!-- ══════════ FANE: KONTAKT ══════════ -->
+<div class="tab-panel" id="tab-kontakt">
+<section>
     <div class="container">
         <div class="sec-tag">Ta kontakt</div>
         <h2 class="sec-title">Kontakt <em>Oss</em></h2>
@@ -1003,6 +1154,9 @@
         </div>
     </div>
 </section>
+</div><!-- /tab-kontakt -->
+
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -1013,6 +1167,15 @@
                  onerror="this.remove()">
             <span class="logo-text">Hurum <span>Golf</span></span>
         </div>
+        <ul class="footer-nav">
+            <li><a href="#hjem">Hjem</a></li>
+            <li><a href="#simulatorer">Simulatorer</a></li>
+            <li><a href="#tjenester">Pro Timer</a></li>
+            <li><a href="#utstyr">Pro Shop</a></li>
+            <li><a href="#regler">Regler</a></li>
+            <li><a href="#instagram">Instagram</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
         <p class="footer-copy" style="text-align:center;">
             📍 Åsveien 2, 3475 Sætre<br>
             <span style="opacity:0.5;font-size:0.75rem;">© 2026 Hurum Golf · Alle rettigheter forbeholdt</span>
@@ -1024,9 +1187,49 @@
 <script src="https://w.behold.so/widget.js" type="module"></script>
 
 <script>
-window.addEventListener('scroll', () => {
-    document.getElementById('nav').classList.toggle('scrolled', scrollY > 60);
-});
+/* ── Fanenavigasjon ────────────────────────────────────
+   Hver seksjon er en egen fane. Adressen (#kontakt osv.)
+   styrer hvilken som vises, så både direktelenker og
+   tilbake-knappen i nettleseren fungerer.               */
+const TABS = ['hjem','simulatorer','tjenester','utstyr','regler','instagram','kontakt'];
+const nav  = document.getElementById('nav');
+
+function showTab(name, scrollTop) {
+    if (!TABS.includes(name)) name = 'hjem';
+
+    TABS.forEach(t => {
+        document.getElementById('tab-' + t)
+                .classList.toggle('is-active', t === name);
+    });
+    document.querySelectorAll('.nav-links a[data-tab]').forEach(a => {
+        a.classList.toggle('active', a.dataset.tab === name);
+    });
+
+    /* Hjem har hero i full høyde — der er navbaren gjennomsiktig
+       til man scroller. På de andre fanene må den alltid være solid. */
+    document.body.classList.toggle('subpage', name !== 'hjem');
+    nav.classList.toggle('solid', name !== 'hjem');
+
+    if (scrollTop !== false) window.scrollTo({ top: 0, behavior: 'instant' });
+    updateScrolled();
+    closeMenu();
+
+    /* Instagram-widgeten måler seg selv — dytt den når fanen blir synlig */
+    if (name === 'instagram') window.dispatchEvent(new Event('resize'));
+}
+
+function routeFromHash() {
+    showTab((location.hash || '#hjem').slice(1));
+}
+
+function updateScrolled() {
+    nav.classList.toggle('scrolled', scrollY > 60 && !nav.classList.contains('solid'));
+}
+
+window.addEventListener('scroll', updateScrolled);
+window.addEventListener('hashchange', routeFromHash);
+routeFromHash();
+
 function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
 function closeMenu()  { document.getElementById('navLinks').classList.remove('open'); }
 </script>
