@@ -618,6 +618,42 @@
         .contact-phone:hover { color: var(--gold); }
         .contact-phone span { font-size: 1rem; }
 
+        .hours-card {
+            background: var(--cream); border: 1px solid var(--cream-dark);
+            border-left: 3px solid var(--gold);
+            border-radius: var(--r-sm);
+            padding: 1.5rem 1.8rem; margin-bottom: 2.5rem;
+            display: flex; align-items: flex-start; gap: 1.1rem;
+            max-width: 460px;
+        }
+        .hours-icon { font-size: 1.5rem; line-height: 1; flex-shrink: 0; }
+        .hours-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem; font-weight: 500;
+            color: var(--green-deep); margin-bottom: 0.7rem;
+        }
+        .hours-line {
+            display: flex; justify-content: space-between;
+            align-items: baseline; gap: 1.5rem;
+            font-size: 0.92rem; color: var(--text-muted);
+            padding-bottom: 0.7rem; border-bottom: 1px solid var(--cream-dark);
+        }
+        .hours-line strong {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem; font-weight: 500;
+            color: var(--green-deep); white-space: nowrap;
+        }
+        .hours-note {
+            font-size: 0.82rem; color: var(--text-muted);
+            line-height: 1.6; margin-top: 0.7rem;
+        }
+        .hours-body { flex: 1; }
+
+        /* På smale skjermer er det ikke plass til dag og tid side ved side */
+        @media (max-width: 520px) {
+            .hours-line { flex-direction: column; align-items: flex-start; gap: 0.15rem; }
+        }
+
         /* ── INSTAGRAM ───────────────────────────────────── */
         #tab-instagram { background: var(--cream); }
         #tab-instagram .sec-tag { color: var(--gold); }
@@ -1132,6 +1168,15 @@
                style="color:var(--green-mid);text-decoration:none;font-weight:500;">
                 Hurumgolf.Sim@gmail.com
             </a>
+        </div>
+
+        <div class="hours-card">
+            <div class="hours-icon">🕐</div>
+            <div class="hours-body">
+                <h4>Åpningstider</h4>
+                <p class="hours-line"><span>Mandag – søndag</span><strong>04:00 – 24:00</strong></p>
+                <p class="hours-note">Åpent alle dager hele året. Book din tid på Alba Play.</p>
+            </div>
         </div>
 
         <div class="contact-grid">
