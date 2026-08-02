@@ -100,7 +100,9 @@
 
         .menu-toggle {
             display: none; flex-direction: column; gap: 5px;
-            cursor: pointer; background: none; border: none; padding: 4px;
+            cursor: pointer; background: none; border: none;
+            /* Padding + negativ margin gir 44px trykkflate uten å flytte ikonet */
+            padding: 14px 10px; margin: -14px -10px;
         }
         .menu-toggle span {
             display: block; width: 24px; height: 2px;
@@ -121,6 +123,10 @@
             .shop-cta .btn-gold, .shop-cta .btn-outline { display: block; width: 100%; text-align: center; }
             .shop-cta { flex-direction: column; align-items: stretch; }
             .shop-chip { padding: 0.5rem 1.05rem; font-size: 0.8rem; }
+            /* Uten dette brekker pilen i «Kontakt oss for bestilling →» til egen linje */
+            .shop-cta .btn-gold { font-size: 0.75rem; letter-spacing: 0.07em; padding: 1rem 1.2rem; }
+            /* Prischipsene blir ujevnt brede når de wrapper — stable dem i stedet */
+            .price-bar { flex-direction: column; align-items: stretch; }
             .menu-toggle { display: flex; }
             .nav-links {
                 display: none;
@@ -727,6 +733,7 @@
         .footer-nav a {
             font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
             color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.25s;
+            display: block; padding: 0.55rem 0;
         }
         .footer-nav a:hover { color: var(--gold); }
 
